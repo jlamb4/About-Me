@@ -1,0 +1,11 @@
+title: Your Site Title
+description: A brief description of your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # the base hostname & protocol for your site
+
+remote_theme: daviddarnes/alembic@main
+
+plugins:
+  - jekyll-remote-theme
+
+# Other configuration options

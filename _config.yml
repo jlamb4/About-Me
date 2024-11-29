@@ -1,7 +1,7 @@
-title: Your Site Title
-description: A brief description of your site
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # the base hostname & protocol for your site
+title: Joshua's Professional Journey # the title of your site
+description: A detailed account of my professional experiences, skills, and accomplishments. # a short description of your site's purpose
+baseurl: "/About-Me" # the subpath of your site, e.g. /blog
+url: "https://jlamb4.github.io" # the base hostname & protocol for your site
 
 remote_theme: daviddarnes/alembic@main
 

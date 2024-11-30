@@ -128,7 +128,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  alembic-jekyll-theme
+  alembic-jekyll-theme (~> 4.1)
   csv
   jekyll (~> 4.2.0)
   wdm (>= 0.1.0)

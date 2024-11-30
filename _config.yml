@@ -3,7 +3,7 @@ description: A detailed account of my professional experiences, skills, and acco
 baseurl: "/About-Me" # the subpath of your site, e.g. /blog
 url: "https://jlamb4.github.io" # the base hostname & protocol for your site
 
-remote_theme: daviddarnes/alembic@main
+remote_theme: daviddarnes/alembic # the theme you're using
 
 plugins:
   - jekyll-remote-theme

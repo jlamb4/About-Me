@@ -1,0 +1,9 @@
+{
+  "lang": "en-US",
+  "name": "Joshua's Professional Journey",
+  "short_name": "Joshua'sProfessionalJourney",
+  "theme_color": "#24292e",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone"
+}

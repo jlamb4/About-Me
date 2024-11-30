@@ -1,11 +1,8 @@
-title: Joshua's Professional Journey # the title of your site
-description: A detailed account of my professional experiences, skills, and accomplishments. # a short description of your site's purpose
-baseurl: "/About-Me" # the subpath of your site, e.g. /blog
+title: Joshua's Professional Journey
+description: A detailed account of my professional experiences, skills, and accomplishments.
+baseurl: "/About-Me" # the subpath of your site
 url: "https://jlamb4.github.io" # the base hostname & protocol for your site
 
-remote_theme: daviddarnes/minima # the theme you're using
-
-plugins:
-  - jekyll-remote-theme
+theme: alembic-jekyll-theme
 
 # Other configuration options

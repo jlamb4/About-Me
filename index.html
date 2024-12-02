@@ -36,8 +36,6 @@
             position: relative;
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
-            padding: 0;
-            border: none;
             margin-top: 60px; /* Adjust for fixed navbar */
         }
         header img {
@@ -51,35 +49,34 @@
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0;
-            padding: 0;
             font-size: 2em;
             color: #000;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
         main {
-            padding: 2em;
-            text-align: center;
+            padding: 2em 1em;
         }
         .category {
-            margin-bottom: 2em;
+            margin-bottom: 1.5em;
         }
         .category h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 0.5em;
+            margin-bottom: 1em;
         }
         .card {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 1em;
+            margin: 1em auto;
             padding: 1em;
+            max-width: 600px;
             text-align: left;
         }
         footer {
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             padding: 0.5em 0;
-            text-align: center;
         }
         @media (max-width: 768px) {
             header h1 {
@@ -98,7 +95,6 @@
         <a href="#workshops">Workshops</a>
         <a href="#certifications">Certifications</a>
         <a href="#memberships">Memberships</a>
-        <a href="#skills">Skills</a>
         <a href="#testimonials">Testimonials</a>
     </nav>
     <header>
@@ -108,28 +104,12 @@
     <main>
         <div class="category" id="conferences">
             <h2>Conferences Attended</h2>
-            <p>4th Annual Detroit Official Cybersecurity Summit, August 20, 2024</p>
-            <p>22nd Annual SecureWorld Detroit, September 18, 2024</p>
             <p>GrrCON Cyber Security Summit, September 26-27, 2024</p>
+            <p>22nd Annual SecureWorld Detroit, September 18, 2024</p>
+            <p>4th Annual Detroit Official Cybersecurity Summit, August 20, 2024</p>
         </div>
         <div class="category" id="projects">
             <h2>Projects Worked On</h2>
-            <div class="card">
-                <h3>ThreatOps – Cloud Workloads Workshop</h3>
-                <ul>
-                    <li>CTF event on threat hunting in cloud-based workloads using SentinelOne.</li>
-                    <li>Specialized in Kubernetes-based workloads.</li>
-                    <li>Hands-on experience with malware analysis.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>ThreatOps – Purple AI Workshop</h3>
-                <ul>
-                    <li>CTF event using Purple AI for threat hunting.</li>
-                    <li>Analyzed alerts and threats in SentinelOne.</li>
-                    <li>Mastered AI-powered threat hunting techniques.</li>
-                </ul>
-            </div>
             <div class="card">
                 <h3>Application Development and Database Management</h3>
                 <ul>
@@ -156,41 +136,34 @@
         </div>
         <div class="category" id="workshops">
             <h2>Workshops</h2>
-            <p>Details about the workshops you have participated in.</p>
+            <div class="card">
+                <h3>ThreatOps – Purple AI Workshop</h3>
+                <ul>
+                    <li>CTF event using Purple AI for threat hunting.</li>
+                    <li>Analyzed alerts and threats in SentinelOne.</li>
+                    <li>Mastered AI-powered threat hunting techniques.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>ThreatOps – Cloud Workloads Workshop</h3>
+                <ul>
+                    <li>CTF event on threat hunting in cloud-based workloads using SentinelOne.</li>
+                    <li>Specialized in Kubernetes-based workloads.</li>
+                    <li>Hands-on experience with malware analysis.</li>
+                </ul>
+            </div>
         </div>
         <div class="category" id="certifications">
             <h2>Certifications</h2>
+            <p>Team Leader Master Apprentice (Stefanini, 2023)</p>
+            <p>Certified Trainer (Stefanini, 2022)</p>
             <p>KCS Foundation (Stefanini, 2021)</p>
             <p>TestOut Linux Pro (2021)</p>
             <p>Autopsy Digital Forensics Basics and Hands-On (2020)</p>
-            <p>Team Leader Master Apprentice (2023)</p>
-            <p>Certified Trainer (2022)</p>
         </div>
         <div class="category" id="memberships">
             <h2>Memberships</h2>
             <p>Member, SysAdmin, Audit, Network and Security (SANS)</p>
-        </div>
-        <div class="category" id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Cyber Threat Hunting</li>
-                <li>Kubernetes</li>
-                <li>SentinelOne</li>
-                <li>MITRE ATT&CK</li>
-                <li>Malware Analysis</li>
-                <li>Artificial Intelligence (AI)</li>
-                <li>Advanced Persistent Threats (APT)</li>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Attention to Detail</li>
-                <li>Problem Solving</li>
-                <li>Time Management</li>
-                <li>Metasploit</li>
-                <li>OpenVAS</li>
-                <li>Report Writing</li>
-                <li>Collaborative Problem Solving</li>
-                <li>Teamwork</li>
-            </ul>
         </div>
         <div class="category" id="testimonials">
             <h2>Testimonials</h2>

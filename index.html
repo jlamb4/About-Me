@@ -23,7 +23,7 @@
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
         nav a {
@@ -40,10 +40,6 @@
             font-size: 1.5em;
             cursor: pointer;
             color: #fff;
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1001;
         }
         .nav-links {
             display: flex;
@@ -98,7 +94,6 @@
         }
         @media (max-width: 768px) {
             nav {
-                justify-content: space-between;
                 padding: 0.5em 1em;
             }
             .nav-links {
@@ -116,7 +111,7 @@
             }
             .nav-links.active {
                 display: flex;
-                max-height: 50vh; /* Limit the height of the menu */
+                max-height: 50vh;
                 overflow-y: auto;
             }
             header h1 {
@@ -134,7 +129,6 @@
             color: #007BFF;
             text-decoration: none;
         }
-
         .homepage-link:hover {
             text-decoration: underline;
         }
@@ -192,7 +186,7 @@
                 <h3>Personal Projects</h3>
                 <ul>
                     <li>Set up and managed a NAS and media server on a Raspberry Pi 4.</li>
-                    <li>Transitioned to managing the NAS and media server on a Synology NAS 220+.</li>
+                    <li>Transitioned to managing the NAS and media server on a Synology NAS DS220+.</li>
                 </ul>
             </div>
         </div>

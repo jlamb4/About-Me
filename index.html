@@ -40,6 +40,10 @@
             font-size: 1.5em;
             cursor: pointer;
             color: #fff;
+            position: fixed;
+            top: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            z-index: 1001; /* Ensure it stays on top */
         }
         .nav-links {
             display: flex;
@@ -122,6 +126,19 @@
                 padding: 1em;
             }
         }
+        /* Style for the homepage link */
+        .homepage-link {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #007BFF; /* Adjust color as needed */
+            text-decoration: none;
+        }
+
+        .homepage-link:hover {
+            text-decoration: underline;
+        }
     </style>
     <script>
         function toggleMenu() {
@@ -147,6 +164,8 @@
         <h1>Joshua's Professional Journey</h1>
     </header>
     <main>
+        <!-- Add the homepage link here -->
+        <a href="https://jlamb.carrd.co" class="homepage-link">Back to Homepage</a>
         <div class="category" id="conferences">
             <h2>Conferences Attended</h2>
             <p>GrrCON Cyber Security Summit, September 26-27, 2024</p>

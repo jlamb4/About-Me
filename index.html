@@ -93,6 +93,10 @@
             padding: 0.5em 0;
         }
         @media (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+                padding: 0.5em 1em;
+            }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -101,13 +105,15 @@
                 transition: all 0.3s ease-in-out;
             }
             .nav-links a {
-                margin: 1em 0;
+                margin: 0.5em 0;
             }
             .menu-icon {
                 display: block;
             }
             .nav-links.active {
                 display: flex;
+                max-height: 50vh; /* Limit the height of the menu */
+                overflow-y: auto;
             }
             header h1 {
                 font-size: 1.5em;
@@ -126,7 +132,6 @@
 </head>
 <body>
     <nav>
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <div class="nav-links">
             <a href="#conferences">Conferences</a>
             <a href="#projects">Projects</a>
@@ -135,6 +140,7 @@
             <a href="#memberships">Memberships</a>
             <a href="#testimonials">Testimonials</a>
         </div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
     </nav>
     <header>
         <img src="https://picsum.photos/1300/400?image=989" alt="Feature Image">

@@ -22,6 +22,9 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         nav a {
             color: #fff;
@@ -31,6 +34,14 @@
         }
         nav a:hover {
             text-decoration: underline;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
         }
         header {
             position: relative;
@@ -79,6 +90,21 @@
             padding: 0.5em 0;
         }
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links a {
+                margin: 1em 0;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .nav-links.active {
+                display: flex;
+            }
             header h1 {
                 font-size: 1.5em;
             }
@@ -87,15 +113,24 @@
             }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
     <nav>
-        <a href="#conferences">Conferences</a>
-        <a href="#projects">Projects</a>
-        <a href="#workshops">Workshops</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#memberships">Memberships</a>
-        <a href="#testimonials">Testimonials</a>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <div class="nav-links">
+            <a href="#conferences">Conferences</a>
+            <a href="#projects">Projects</a>
+            <a href="#workshops">Workshops</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#memberships">Memberships</a>
+            <a href="#testimonials">Testimonials</a>
+        </div>
     </nav>
     <header>
         <img src="https://picsum.photos/1300/400?image=989" alt="Feature Image">
@@ -155,8 +190,8 @@
         </div>
         <div class="category" id="certifications">
             <h2>Certifications</h2>
-            <p>Team Leader Master Apprentice (Stefanini, 2023)</p>
-            <p>Certified Trainer (Stefanini, 2022)</p>
+            <p>Team Leader Master Apprentice (2023)</p>
+            <p>Certified Trainer (2022)</p>
             <p>KCS Foundation (Stefanini, 2021)</p>
             <p>TestOut Linux Pro (2021)</p>
             <p>Autopsy Digital Forensics Basics and Hands-On (2020)</p>

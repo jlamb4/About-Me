@@ -36,12 +36,13 @@
         }
         .menu-icon {
             display: none;
-            font-size: 1.5em;
+            font-size: 1.75em;
+            padding: 12px;
             cursor: pointer;
             color: #fff;
             position: absolute;
-            top: 10px;
-            left: 10px; /* Position the icon in the top-left corner */
+            top: 8px;
+            left: 8px;
             z-index: 1001;
         }
         .nav-links {
@@ -88,15 +89,7 @@
             padding-bottom: 0.5em;
             margin-bottom: 1em;
         }
-        .card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 1em auto;
-            padding: 1em;
-            max-width: 600px;
-            text-align: left;
-        }
+        .card,
         .testimonial {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
@@ -105,17 +98,6 @@
             padding: 1em;
             max-width: 600px;
             text-align: left;
-        }
-        .testimonial p {
-            margin: 0.5em 0;
-        }
-        .testimonial strong {
-            font-size: 1.1em;
-        }
-        .testimonial em {
-            display: block;
-            margin-top: 0.5em;
-            color: #555;
         }
         footer {
             background-color: rgba(51, 51, 51, 0.8);
@@ -127,18 +109,22 @@
                 padding: 0.5em 1em;
                 justify-content: space-between;
             }
+            .menu-icon {
+                display: block;
+            }
             .nav-links {
                 display: none;
                 flex-direction: column;
                 width: 100%;
                 text-align: center;
-                transition: all 0.3s ease-in-out;
+
+                /* ✅ NEW: explicit background for readability */
+                background-color: rgba(51, 51, 51, 0.95);
             }
+            /* ✅ Step 2 COMPLETE: spacing & readability */
             .nav-links a {
-                margin: 0.5em 0;
-            }
-            .menu-icon {
-                display: block;
+                padding: 12px 0;
+                font-size: 1.1rem;
             }
             .nav-links.active {
                 display: flex;
@@ -152,24 +138,6 @@
                 padding: 1em;
             }
         }
-        .homepage-link {
-            display: block;
-            margin: 10px 0;
-            text-align: center;
-            font-size: 14px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .homepage-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
 </head>
 <body>
     <nav>

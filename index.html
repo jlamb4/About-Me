@@ -10,18 +10,17 @@
             font-family: 'Raleway', sans-serif;
             margin: 0;
             padding: 0;
-            padding-top: 64px;
+            padding-top: 4.75rem;
             background: linear-gradient(135deg, #f5f7fa, #e4e8ee);
             color: #333;
             text-align: center;
         }
-        nav {
+        nav {   
             background-color: rgba(51, 51, 51, 0.9);
             position: fixed;
-            width: 100%;
             top: 0;
-            height: 64px;
-            padding: 0 1em;
+            width: 100%;
+            padding: 0.75rem 1rem;
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -116,10 +115,13 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
+                position: fixed;
+                top: 4.75rem;
+                left: 0;
                 width: 100%;
                 text-align: center;
-
                 background-color: rgba(51, 51, 51, 0.95);
+                z-index: 999;
             }
             .nav-links a {
                 padding: 12px 0;

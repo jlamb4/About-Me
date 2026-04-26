@@ -19,13 +19,13 @@
             padding: 0;
             background: radial-gradient(circle at top right, #1e293b, #0f172a);
             color: #e2e8f0;
-            line-height: 1.4; /* Tightened for a more professional, grouped feel */
+            line-height: 1.4;
             text-align: center;
         }
 
-        /* Navigation - Glassmorphism style */
+        /* Navigation - Fixed the top gap issue */
         nav {   
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
@@ -47,11 +47,8 @@
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: var(--primary-blue);
-        }
+        nav a:hover { color: var(--primary-blue); }
 
-        /* Hamburger Menu Icon - Hidden on Desktop */
         .menu-icon {
             display: none;
             font-size: 1.75em;
@@ -61,18 +58,25 @@
             left: 20px;
         }
 
-        /* Header with Cinematic Fade */
+        /* Header - Removed mask-image to fix the "odd" top area */
         header {
             height: 300px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 60px; /* Space for fixed nav */
+            margin-top: 55px; /* Aligned closer to the nav */
             overflow: hidden;
-            /* Masks the image so it fades into the background color */
-            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            background-color: #0f172a;
+        }
+
+        /* Solid top, faded bottom overlay */
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0) 60%, #0f172a 100%);
+            z-index: 1;
         }
 
         header img {
@@ -80,7 +84,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.4; /* Softens the image to keep focus on the text */
+            opacity: 0.35;
         }
 
         header h1 {
@@ -88,7 +92,7 @@
             font-size: clamp(1.6rem, 5vw, 2.8rem);
             margin: 0;
             font-weight: 700;
-            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         main {
@@ -103,14 +107,8 @@
             margin-bottom: 2rem;
             text-decoration: none;
             font-weight: bold;
-            transition: opacity 0.2s;
         }
 
-        .homepage-link:hover {
-            opacity: 0.8;
-        }
-
-        /* Section Headers */
         .category h2 {
             color: var(--primary-blue);
             text-transform: uppercase;
@@ -122,7 +120,6 @@
             margin: 2rem 0 1rem;
         }
 
-        /* Hybrid Alignment Cards */
         .card, .testimonial {
             background: var(--card-bg);
             backdrop-filter: blur(8px);
@@ -131,46 +128,19 @@
             padding: 1.5rem 2rem;
             margin: 0 auto 1.5rem auto;
             max-width: 750px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            text-align: left; /* Left align for lists and long text */
+            text-align: left;
         }
 
-        /* Center-aligned specific content */
-        #certifications p, 
-        #memberships p, 
-        #conferences p,
-        .testimonial p strong {
+        #certifications p, #memberships p, #conferences p, .testimonial p strong {
             text-align: center;
             display: block;
         }
 
-        .card h3 {
-            color: #fff;
-            margin-top: 0;
-        }
+        ul { padding-left: 1.2rem; }
 
-        ul {
-            padding-left: 1.2rem;
-            margin-bottom: 0;
-        }
-
-        footer {
-            padding: 2rem 0;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Overrides */
         @media (max-width: 768px) {
-            nav {
-                justify-content: flex-start;
-                padding-left: 50px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
+            nav { justify-content: flex-start; padding-left: 50px; }
+            .menu-icon { display: block; }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -178,26 +148,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(15, 23, 42, 0.95);
+                background: rgba(15, 23, 42, 0.98);
                 padding: 1rem 0;
-                border-bottom: 1px solid var(--glass-border);
             }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                margin: 0.5rem 0;
-            }
-
-            header {
-                height: 220px;
-            }
-
-            .card, .testimonial {
-                padding: 1.2rem;
-            }
+            .nav-links.active { display: flex; }
+            header { height: 220px; }
         }
     </style>
 </head>

@@ -9,8 +9,8 @@
         :root {
             --primary-blue: #007bff;
             --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7); 
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(30, 41, 59, 0.6); 
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
         body {
@@ -19,10 +19,11 @@
             padding: 0;
             background: radial-gradient(circle at top right, #1e293b, #0f172a);
             color: #e2e8f0;
-            line-height: 1.6;
-            text-align: center; /* This centers your text globally again */
+            line-height: 1.4; /* Tightened for a more professional, grouped feel */
+            text-align: center;
         }
 
+        /* Navigation - Glassmorphism style */
         nav {   
             background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
@@ -33,19 +34,12 @@
             z-index: 1000;
             border-bottom: 1px solid var(--glass-border);
             display: flex;
-            justify-content: center; /* Centers the desktop links */
+            justify-content: center;
             align-items: center;
+            box-sizing: border-box;
         }
 
-        /* Hide the hamburger icon by default (Desktop) */
-        .menu-icon {
-            display: none; 
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .nav-links a {
+        nav a {
             color: #94a3b8;
             margin: 0 1em;
             text-decoration: none;
@@ -53,26 +47,32 @@
             font-weight: bold;
         }
 
-        .nav-links a:hover {
+        nav a:hover {
             color: var(--primary-blue);
         }
 
+        /* Hamburger Menu Icon - Hidden on Desktop */
+        .menu-icon {
+            display: none;
+            font-size: 1.75em;
+            cursor: pointer;
+            color: #fff;
+            position: absolute;
+            left: 20px;
+        }
+
+        /* Header with Cinematic Fade */
         header {
-            height: 350px;
+            height: 300px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 60px;
+            margin-top: 60px; /* Space for fixed nav */
             overflow: hidden;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), #0f172a);
-            z-index: 1;
+            /* Masks the image so it fades into the background color */
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
         }
 
         header img {
@@ -80,13 +80,15 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.4; /* Softens the image to keep focus on the text */
         }
 
         header h1 {
             z-index: 2;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
             margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         main {
@@ -95,62 +97,106 @@
             padding: 2rem 1rem;
         }
 
+        .homepage-link {
+            display: inline-block;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .homepage-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Section Headers */
         .category h2 {
             color: var(--primary-blue);
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 1.2rem;
-            border-bottom: 2px solid var(--primary-blue); /* Changed from left-border back to bottom for centering */
-            display: inline-block; /* Makes the border only as wide as the text */
-            padding-bottom: 5px;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 4px;
+            margin: 2rem 0 1rem;
         }
 
+        /* Hybrid Alignment Cards */
         .card, .testimonial {
             background: var(--card-bg);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 0 auto 1.5rem auto; /* Centers the card horizontally */
-            max-width: 700px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            text-align: center; /* Centers text inside the cards */
+            padding: 1.5rem 2rem;
+            margin: 0 auto 1.5rem auto;
+            max-width: 750px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            text-align: left; /* Left align for lists and long text */
         }
 
-        .card ul {
-            display: inline-block; /* Helps center the list while keeping bullets aligned */
-            text-align: left;
+        /* Center-aligned specific content */
+        #certifications p, 
+        #memberships p, 
+        #conferences p,
+        .testimonial p strong {
+            text-align: center;
+            display: block;
         }
 
-        /* Mobile Styles */
+        .card h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            padding: 2rem 0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Overrides */
         @media (max-width: 768px) {
             nav {
-                justify-content: space-between; /* Puts icon on one side, empty space on the other */
+                justify-content: flex-start;
+                padding-left: 50px;
             }
 
             .menu-icon {
-                display: block; /* Show hamburger only on mobile */
-                padding-left: 10px;
+                display: block;
             }
 
             .nav-links {
-                display: none; /* Hide links on mobile unless 'active' */
+                display: none;
                 flex-direction: column;
-                background: rgba(15, 23, 42, 0.95);
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
+                background: rgba(15, 23, 42, 0.95);
                 padding: 1rem 0;
+                border-bottom: 1px solid var(--glass-border);
             }
 
             .nav-links.active {
                 display: flex;
             }
 
+            .nav-links a {
+                margin: 0.5rem 0;
+            }
+
             header {
-                height: 250px;
+                height: 220px;
+            }
+
+            .card, .testimonial {
+                padding: 1.2rem;
             }
         }
     </style>

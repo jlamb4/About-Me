@@ -9,8 +9,9 @@
         :root {
             --primary-blue: #007bff;
             --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.6); 
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(30, 41, 59, 0.45); /* Thinner for better glass effect */
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --nav-bg: rgba(15, 23, 42, 0.8);
         }
 
         body {
@@ -18,19 +19,21 @@
             margin: 0;
             padding: 0;
             background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            background-attachment: fixed; /* Keeps gradient still while scrolling */
             color: #e2e8f0;
-            line-height: 1.4;
+            line-height: 1.5;
             text-align: center;
         }
 
-        /* Navigation - Fixed the top gap issue */
+        /* Fixed Navigation with Blur */
         nav {   
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem;
             z-index: 1000;
             border-bottom: 1px solid var(--glass-border);
             display: flex;
@@ -41,105 +44,124 @@
 
         nav a {
             color: #94a3b8;
-            margin: 0 1em;
+            margin: 0 1.2em;
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: bold;
+            transition: 0.3s;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav a:hover { color: var(--primary-blue); }
 
         .menu-icon {
             display: none;
-            font-size: 1.75em;
+            font-size: 1.5rem;
             cursor: pointer;
             color: #fff;
             position: absolute;
             left: 20px;
         }
 
-        /* Header - Removed mask-image to fix the "odd" top area */
+        /* Cinematic Header Overlay */
         header {
-            height: 300px;
+            height: 400px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 55px; /* Aligned closer to the nav */
+            margin-top: 0; /* Let it sit under the transparent nav */
             overflow: hidden;
-            background-color: #0f172a;
         }
 
-        /* Solid top, faded bottom overlay */
+        /* The "Blend" - Solid at top, fades out at bottom */
         header::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0) 60%, #0f172a 100%);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3) 0%, #0f172a 95%);
             z-index: 1;
         }
 
         header img {
-            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.35;
+            opacity: 0.5;
         }
 
         header h1 {
+            position: relative;
             z-index: 2;
-            font-size: clamp(1.6rem, 5vw, 2.8rem);
-            margin: 0;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-top: 40px; /* Offsets for the nav height */
+            font-weight: 800;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+            max-width: 1100px;
+            margin: -50px auto 0; /* Pulls content UP onto the header fade */
+            position: relative;
+            z-index: 5;
+            padding: 0 1.5rem 4rem;
         }
 
         .homepage-link {
             display: inline-block;
             color: var(--primary-blue);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             text-decoration: none;
             font-weight: bold;
+            background: rgba(0, 123, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--primary-blue);
         }
 
+        /* Section Headers */
         .category h2 {
-            color: var(--primary-blue);
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--primary-blue);
-            display: inline-block;
-            padding-bottom: 4px;
-            margin: 2rem 0 1rem;
+            letter-spacing: 3px;
+            font-size: 1.3rem;
+            margin: 4rem 0 2rem;
+            position: relative;
         }
 
+        .category h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 10px auto;
+        }
+
+        /* Restored Glass Cards */
         .card, .testimonial {
             background: var(--card-bg);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin: 0 auto 1.5rem auto;
-            max-width: 750px;
-            text-align: left;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 0 auto 2rem auto;
+            max-width: 800px;
+            text-align: left; /* Clean professional alignment */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        #certifications p, #memberships p, #conferences p, .testimonial p strong {
+        /* Content Center Overrides */
+        #certifications p, #memberships p, #conferences p {
             text-align: center;
-            display: block;
+            font-weight: 500;
         }
-
-        ul { padding-left: 1.2rem; }
 
         @media (max-width: 768px) {
-            nav { justify-content: flex-start; padding-left: 50px; }
+            header { height: 300px; }
+            nav { justify-content: flex-start; padding-left: 60px; }
             .menu-icon { display: block; }
             .nav-links {
                 display: none;
@@ -152,7 +174,7 @@
                 padding: 1rem 0;
             }
             .nav-links.active { display: flex; }
-            header { height: 220px; }
+            main { margin-top: -30px; }
         }
     </style>
 </head>

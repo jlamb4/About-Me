@@ -65,7 +65,7 @@
 
         /* Header Styling */
         header {
-            height: 450px; /* Slightly taller for better text placement */
+            height: 450px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -75,7 +75,6 @@
             background-color: #0f172a;
         }
 
-        /* Gradient to fade bottom of image into the background */
         header::after {
             content: "";
             position: absolute;
@@ -92,26 +91,28 @@
             opacity: 0.4;
         }
 
+        /* High-Impact Header Typography */
         header h1 {
             position: relative;
             z-index: 2;
-            font-size: clamp(2.2rem, 7vw, 4rem);
-            font-weight: 800;
+            font-size: clamp(2.2rem, 7vw, 3.8rem);
+            font-weight: 800; /* Extra bold for professional impact */
+            letter-spacing: 2px; /* Editorial spacing */
             margin: 0;
             padding: 0 20px;
             text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
 
-        /* Main content pull-up for the overlap effect */
+        /* Main content pull-up overlap */
         main {
             max-width: 1100px;
-            margin: -80px auto 0; /* Pulls button and content up into the header fade */
+            margin: -80px auto 0; 
             position: relative;
             z-index: 5;
             padding: 0 1.5rem 4rem;
         }
 
-        /* Button Styling to match your image */
+        /* Pill-style Homepage Button */
         .homepage-link {
             display: inline-block;
             color: var(--primary-blue);
@@ -132,13 +133,14 @@
             transform: translateY(-2px);
         }
 
-        /* Section Headers */
+        /* Centered Section Headers */
         .category h2 {
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 1.4rem;
-            margin-bottom: 2rem;
+            margin-top: 3rem;
+            text-align: center;
         }
 
         .category h2::after {
@@ -150,7 +152,7 @@
             margin: 12px auto;
         }
 
-        /* Glass Cards */
+        /* Hybrid Alignment: Left-aligned for details and testimonials */
         .card, .testimonial {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
@@ -160,14 +162,26 @@
             padding: 2rem;
             margin: 0 auto 2rem auto;
             max-width: 800px;
-            text-align: left;
+            text-align: left; /* Improved readability for lists/prose */
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
-        /* Content Center Overrides */
-        #certifications p, #memberships p, #conferences p {
+        /* Hybrid Alignment: Centered for short items */
+        #certifications p, 
+        #memberships p, 
+        #conferences p, 
+        .testimonial p strong {
             text-align: center;
+            display: block;
             margin: 0.8rem 0;
+        }
+
+        ul { padding-left: 1.2rem; }
+
+        footer {
+            padding: 2rem 0;
+            color: #64748b;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -186,7 +200,6 @@
             }
             .nav-links.active { display: flex; }
             main { margin-top: -60px; }
-            .homepage-link { margin-bottom: 3rem; }
         }
     </style>
 </head>
